@@ -20,7 +20,8 @@ const expressions = {
   ouch: '😵',
   cool: '😎',
   blink: '😑',
-  sleep: '😴'
+  sleep: '😴',
+  robot: '🤖'
 };
 
 const emojiMap = {
@@ -89,6 +90,13 @@ function sleep () {
 // Event listeners
 $("#cdf").hover(function(){
   $(emojiElement).text(expressions.cool)
+  idle = false;
+}, function(){
+  $(emojiElement).text(expressions.idle)
+  backToIdle();
+})
+$("#repo").hover(function(){
+  $(emojiElement).text(expressions.robot)
   idle = false;
 }, function(){
   $(emojiElement).text(expressions.idle)
