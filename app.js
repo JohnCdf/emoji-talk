@@ -9,6 +9,7 @@ var blinks = 0;
 var backToIdle = function(){
   idle = true;
   blinks = 0;
+  $(emojiElement).text(expressions.idle);
 };
 
 // Models
