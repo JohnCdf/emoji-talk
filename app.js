@@ -34,7 +34,7 @@ const emojiMap = {
   "😛": ["l"],
   "😲": [",", " "],
   "🙁": ["b"]
-}
+};
 
 // Main functions
 function say (text) {
@@ -58,7 +58,7 @@ function say (text) {
 function handleOnclick () {
   clearInterval(speakingInterval);
   say($("#main_input__control").val());
-}
+};
 
 function isSleepy () {
   return blinks > 4 && idle
@@ -73,7 +73,8 @@ function blink () {
       $(emojiElement).text(expressions.idle);
     }, 100)
   }
-}
+};
+
 blinkInterval = setInterval (function(){
     blink();
     if (isSleepy()) {
@@ -81,7 +82,7 @@ blinkInterval = setInterval (function(){
           sleep()
       }, 5000)
     }
-}, 4000)
+}, 4000);
 
 function sleep () {
   $(emojiElement).text(expressions.sleep);
@@ -117,7 +118,8 @@ $(emojiElement).mousedown(function(){
 }).mouseup(function(){
   $(this).text(expressions.idle)
   backToIdle();
-})
+});
+
 $("body").ready(function(){
   if (!localStorage.emojiTalk) {
     $("#main_input__control").val("Hello, world!");
